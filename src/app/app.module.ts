@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ServersComponent } from './servers/servers.component';
 import { ServerComponent } from './server/server.component';
 
+//NgModule decorator converts simple class to module file
 @NgModule({
   //imports is used to add other module
   imports: [BrowserModule, FormsModule],
