@@ -1,3 +1,11 @@
 <!-- property binding [<property>]="<data mentioned in component file>" -->
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<!-- click is an event along with the method that will be executed with that particular eveent this is event binding -->
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Add Server
+</button>
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server> <app-server></app-server>
