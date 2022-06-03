@@ -12,10 +12,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
   allowNewServer = false;
+  //initailly component loaded will show serverName as TestServer as ngModel used when changed in templat file it will also change here
+  serverName: string = 'TestServer';
   serverCreationStatus = 'no Server was created';
   onCreateServer = () => {
-    this.serverCreationStatus = 'Server is created';
+    this.serverCreationStatus = 'Server is created! Name is' + this.serverName;
   };
+  onUpdateServerName(event: any) {
+    this.serverName = (<HTMLInputElement>event.target).value;
+  }
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
