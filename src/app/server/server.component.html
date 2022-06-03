@@ -1,2 +1,8 @@
 <!-- String interpolation {{<any string that can be resolved in the end even a method that  return string but cannot have block code like if , etc > }} -->
-<p>server with {{ serverId }} and {{ serverStatus }}</p>
+<!-- <p [ngStyle]="serverStatus === 'online' ? online : offline"> -->
+<p
+  [ngStyle]="{ backgroundColor: getColor() }"
+  [ngClass]="{ online: serverStatus === 'online' }"
+>
+  server with {{ serverId }} and {{ serverStatus }}
+</p>

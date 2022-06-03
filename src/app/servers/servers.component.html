@@ -1,6 +1,6 @@
 <!-- property binding [<property>]="<data mentioned in component file>" -->
 <!-- click is an event along with the method that will be executed with that particular eveent this is event binding -->
-<label>Server Name</label>
+<!-- <label>Server Name</label> -->
 
 <!-- input event fire with every inout event  -->
 <!-- $event is reserved variable name can be used to pass to know about the event i.e data about the event just generated -->
@@ -8,14 +8,26 @@
 <!-- two way data binding = property + event binding  -->
 <!-- if we change in template change will be reflected in component -->
 <!-- if we change in component change will be reflected in template -->
-<input type="text" class="form-control" [(ngModel)]="serverName" />
-{{ serverName }}
-<button
+<!-- <input type="text" class="form-control" [(ngModel)]="serverName" /> -->
+<!-- {{ serverName }} -->
+<!-- <button
   class="btn btn-primary"
   [disabled]="!allowNewServer"
   (click)="onCreateServer()"
 >
   Add Server
+</button> -->
+<button class="btn btn-primary" (click)="togglePasswordAddDetails()">
+  Display Details
 </button>
-<p>{{ serverCreationStatus }}</p>
-<app-server></app-server> <app-server></app-server>
+<p *ngIf="toggle">{{ para }}</p>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<!-- <app-server *ngFor="let server of servers"></app-server> -->
+<ul>
+  <li
+    *ngFor="let time of timeArray; let i = index"
+    [ngStyle]="i > 4 && { backgroundColor : 'blue' }"
+  >
+    {{ i + 1 }} {{ time }}
+  </li>
+</ul>
