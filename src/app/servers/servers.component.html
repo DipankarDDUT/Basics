@@ -26,7 +26,7 @@
 <ul>
   <li
     *ngFor="let time of timeArray; let i = index"
-    [ngStyle]="i > 4 && { backgroundColor : 'blue' }"
+    [ngStyle]="i >= 4 && { backgroundColor: 'blue' }"
   >
     {{ i + 1 }} {{ time }}
   </li>
