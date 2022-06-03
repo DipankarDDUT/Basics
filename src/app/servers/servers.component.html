@@ -27,7 +27,7 @@
   <li
     *ngFor="let time of timeArray; let i = index"
     [ngStyle]="i >= 4 && { backgroundColor: 'blue' }"
-    [ngClass]="i>=4:whiteAdd"
+    [ngClass]="{ whiteAdd: i >= 4 }"
   >
     {{ i + 1 }} {{ time }}
   </li>
